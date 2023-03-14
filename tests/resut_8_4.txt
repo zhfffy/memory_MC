@@ -1,0 +1,836 @@
+argc = 3
+verbose = 2
+read aig successfully
+bad state: 508
+model created successfully
+
+
+-----------------Add Level 1-----------------
+frames.size = 1   fr.k = 0
+frames.size = 2   fr.k = 1
+frames.size = 3   fr.k = 2
+Strengthen frames[1]
+CTI exists, start to handle CTI with error successor
+
+Remaining 1 Obligations
+handling Obligation: cube ~l0 l4 l6  in frame 0
+The obligation is fulfilled, and the cube is lifted to l4 
+
+Start to Generalize cube l4 in frame 0
+cube is generalized to l4 
+Add cube in level 1: l4 
+push clause to level 1
+
+Remaining 1 Obligations
+handling Obligation: cube ~l0 l4 l6  in frame 1
+The obligation is fulfilled, and the cube is lifted to l4 l6 
+
+Start to Generalize cube l4 l6 in frame 1
+cube is generalized to l6 l4 
+Add cube in level 2: l4 l6 
+push clause to level 2
+Handle CTI successfully
+CTI exists, start to handle CTI with error successor
+
+Remaining 1 Obligations
+handling Obligation: cube l1 ~l2 l3 l6 ~l16  in frame 0
+The obligation is fulfilled, and the cube is lifted to l1 
+
+Start to Generalize cube l1 in frame 0
+cube is generalized to l1 
+Add cube in level 1: l1 
+push clause to level 1
+
+Remaining 1 Obligations
+handling Obligation: cube l1 ~l2 l3 l6 ~l16  in frame 1
+The obligation is fulfilled, and the cube is lifted to l1 ~l2 l3 l6 ~l16 
+
+Start to Generalize cube l1 ~l2 l3 l6 ~l16 in frame 1
+cube is generalized to ~l16 ~l2 l3 l6 l1 
+Add cube in level 2: l1 ~l2 l3 l6 ~l16 
+push clause to level 2
+Handle CTI successfully
+CTI exists, start to handle CTI with error successor
+
+Remaining 1 Obligations
+handling Obligation: cube ~l2 ~l3 ~l5 l10  in frame 0
+The obligation is fulfilled, and the cube is lifted to l10 
+
+Start to Generalize cube l10 in frame 0
+cube is generalized to l10 
+Add cube in level 1: l10 
+push clause to level 1
+
+Remaining 1 Obligations
+handling Obligation: cube ~l2 ~l3 ~l5 l10  in frame 1
+The obligation is fulfilled, and the cube is lifted to ~l2 ~l3 ~l5 l10 
+
+Start to Generalize cube ~l2 ~l3 ~l5 l10 in frame 1
+cube is generalized to ~l5 ~l2 ~l3 l10 
+Add cube in level 2: ~l2 ~l3 ~l5 l10 
+push clause to level 2
+Handle CTI successfully
+CTI exists, start to handle CTI with error successor
+
+Remaining 1 Obligations
+handling Obligation: cube l0 l6 ~l9 ~l11 ~l13 ~l15  in frame 0
+The obligation is fulfilled, and the cube is lifted to l0 
+
+Start to Generalize cube l0 in frame 0
+cube is generalized to l0 
+Add cube in level 1: l0 
+push clause to level 1
+
+Remaining 1 Obligations
+handling Obligation: cube l0 l6 ~l9 ~l11 ~l13 ~l15  in frame 1
+The obligation is fulfilled, and the cube is lifted to l0 ~l9 ~l11 ~l13 ~l15 
+
+Start to Generalize cube l0 ~l9 ~l11 ~l13 ~l15 in frame 1
+cube is generalized to ~l9 ~l11 ~l13 ~l15 l0 
+Add cube in level 2: l0 ~l9 ~l11 ~l13 ~l15 
+push clause to level 2
+Handle CTI successfully
+CTI exists, start to handle CTI with error successor
+
+Remaining 1 Obligations
+handling Obligation: cube ~l2 l3 ~l5 l16  in frame 0
+The obligation is fulfilled, and the cube is lifted to l16 
+
+Start to Generalize cube l16 in frame 0
+cube is generalized to l16 
+Add cube in level 1: l16 
+push clause to level 1
+
+Remaining 1 Obligations
+handling Obligation: cube ~l2 l3 ~l5 l16  in frame 1
+The obligation is fulfilled, and the cube is lifted to ~l2 l3 ~l5 l16 
+
+Start to Generalize cube ~l2 l3 ~l5 l16 in frame 1
+cube is generalized to ~l5 ~l2 l3 l16 
+Add cube in level 2: ~l2 l3 ~l5 l16 
+push clause to level 2
+Handle CTI successfully
+CTI exists, start to handle CTI with error successor
+
+Remaining 1 Obligations
+handling Obligation: cube ~l2 ~l3 ~l4 l9  in frame 0
+The obligation is fulfilled, and the cube is lifted to l9 
+
+Start to Generalize cube l9 in frame 0
+cube is generalized to l9 
+Add cube in level 1: l9 
+push clause to level 1
+
+Remaining 1 Obligations
+handling Obligation: cube ~l2 ~l3 ~l4 l9  in frame 1
+The obligation is fulfilled, and the cube is lifted to ~l2 ~l3 ~l4 l9 
+
+Start to Generalize cube ~l2 ~l3 ~l4 l9 in frame 1
+cube is generalized to ~l4 l9 ~l2 ~l3 
+Add cube in level 2: ~l2 ~l3 ~l4 l9 
+push clause to level 2
+Handle CTI successfully
+CTI exists, start to handle CTI with error successor
+
+Remaining 1 Obligations
+handling Obligation: cube ~l1 l5 l6  in frame 0
+The obligation is fulfilled, and the cube is lifted to l6 
+
+Start to Generalize cube l6 in frame 0
+cube is generalized to l6 
+Add cube in level 1: l6 
+push clause to level 1
+
+Remaining 1 Obligations
+handling Obligation: cube ~l1 l5 l6  in frame 1
+The obligation is not fulfilled, a new CTI found.
+
+Remaining 2 Obligations
+handling Obligation: cube l2 ~l3 l5 ~l12  in frame 0
+The obligation is fulfilled, and the cube is lifted to l5 
+
+Start to Generalize cube l5 in frame 0
+cube is generalized to l5 
+Add cube in level 1: l5 
+push clause to level 1
+
+Remaining 2 Obligations
+handling Obligation: cube ~l1 l5 l6  in frame 1
+The obligation is fulfilled, and the cube is lifted to l5 l6 
+
+Start to Generalize cube l5 l6 in frame 1
+cube is generalized to l6 l5 
+Add cube in level 2: l5 l6 
+push clause to level 2
+
+Remaining 1 Obligations
+handling Obligation: cube l2 ~l3 l5 ~l12  in frame 1
+The obligation is fulfilled, and the cube is lifted to l2 ~l3 l5 ~l12 
+
+Start to Generalize cube l2 ~l3 l5 ~l12 in frame 1
+cube is generalized to ~l12 l2 ~l3 l5 
+Add cube in level 2: l2 ~l3 l5 ~l12 
+push clause to level 2
+Handle CTI successfully
+CTI exists, start to handle CTI with error successor
+
+Remaining 1 Obligations
+handling Obligation: cube l2 l3 ~l4 l13  in frame 0
+The obligation is fulfilled, and the cube is lifted to l13 
+
+Start to Generalize cube l13 in frame 0
+cube is generalized to l13 
+Add cube in level 1: l13 
+push clause to level 1
+
+Remaining 1 Obligations
+handling Obligation: cube l2 l3 ~l4 l13  in frame 1
+The obligation is fulfilled, and the cube is lifted to l2 l3 ~l4 l13 
+
+Start to Generalize cube l2 l3 ~l4 l13 in frame 1
+cube is generalized to l13 ~l4 l2 l3 
+Add cube in level 2: l2 l3 ~l4 l13 
+push clause to level 2
+Handle CTI successfully
+CTI exists, start to handle CTI with error successor
+
+Remaining 1 Obligations
+handling Obligation: cube ~l2 l3 ~l4 l15  in frame 0
+The obligation is fulfilled, and the cube is lifted to l15 
+
+Start to Generalize cube l15 in frame 0
+cube is generalized to l15 
+Add cube in level 1: l15 
+push clause to level 1
+
+Remaining 1 Obligations
+handling Obligation: cube ~l2 l3 ~l4 l15  in frame 1
+The obligation is fulfilled, and the cube is lifted to ~l2 l3 ~l4 l15 
+
+Start to Generalize cube ~l2 l3 ~l4 l15 in frame 1
+cube is generalized to l15 ~l4 ~l2 l3 
+Add cube in level 2: ~l2 l3 ~l4 l15 
+push clause to level 2
+Handle CTI successfully
+CTI exists, start to handle CTI with error successor
+
+Remaining 1 Obligations
+handling Obligation: cube l2 l3 ~l5 l14  in frame 0
+The obligation is fulfilled, and the cube is lifted to l14 
+
+Start to Generalize cube l14 in frame 0
+cube is generalized to l14 
+Add cube in level 1: l14 
+push clause to level 1
+
+Remaining 1 Obligations
+handling Obligation: cube l2 l3 ~l5 l14  in frame 1
+The obligation is fulfilled, and the cube is lifted to l2 l3 ~l5 l14 
+
+Start to Generalize cube l2 l3 ~l5 l14 in frame 1
+cube is generalized to l14 ~l5 l2 l3 
+Add cube in level 2: l2 l3 ~l5 l14 
+push clause to level 2
+Handle CTI successfully
+CTI exists, start to handle CTI with error successor
+
+Remaining 1 Obligations
+handling Obligation: cube l2 ~l3 ~l4 l11  in frame 0
+The obligation is fulfilled, and the cube is lifted to l11 
+
+Start to Generalize cube l11 in frame 0
+cube is generalized to l11 
+Add cube in level 1: l11 
+push clause to level 1
+
+Remaining 1 Obligations
+handling Obligation: cube l2 ~l3 ~l4 l11  in frame 1
+The obligation is fulfilled, and the cube is lifted to l2 ~l3 ~l4 l11 
+
+Start to Generalize cube l2 ~l3 ~l4 l11 in frame 1
+cube is generalized to l11 ~l4 l2 ~l3 
+Add cube in level 2: l2 ~l3 ~l4 l11 
+push clause to level 2
+Handle CTI successfully
+CTI exists, start to handle CTI with error successor
+
+Remaining 1 Obligations
+handling Obligation: cube l2 ~l3 ~l5 l12  in frame 0
+The obligation is fulfilled, and the cube is lifted to l12 
+
+Start to Generalize cube l12 in frame 0
+cube is generalized to l12 
+Add cube in level 1: l12 
+push clause to level 1
+
+Remaining 1 Obligations
+handling Obligation: cube l2 ~l3 ~l5 l12  in frame 1
+The obligation is fulfilled, and the cube is lifted to l2 ~l3 ~l5 l12 
+
+Start to Generalize cube l2 ~l3 ~l5 l12 in frame 1
+cube is generalized to l12 ~l5 l2 ~l3 
+Add cube in level 2: l2 ~l3 ~l5 l12 
+push clause to level 2
+Handle CTI successfully
+No CTI found.
+CubeSet of frame 0: 
+CubeSet of frame 1: 
+l0 
+l1 
+l4 
+l5 
+l6 
+l9 
+l10 
+l11 
+l12 
+l13 
+l14 
+l15 
+l16 
+CubeSet of frame 2: 
+l4 l6 
+l5 l6 
+l2 l3 ~l4 l13 
+l2 l3 ~l5 l14 
+l2 ~l3 ~l4 l11 
+l2 ~l3 l5 ~l12 
+l2 ~l3 ~l5 l12 
+~l2 l3 ~l4 l15 
+~l2 l3 ~l5 l16 
+~l2 ~l3 ~l4 l9 
+~l2 ~l3 ~l5 l10 
+l0 ~l9 ~l11 ~l13 ~l15 
+l1 ~l2 l3 l6 ~l16 
+propagate
+remove cube s in frame i if s appears in frame j > i
+frame: 2 CubeSize: 13 RemoveSize: 13 AllRemoveSize: 13
+frame: 1 CubeSize: 13 RemoveSize: 13 AllRemoveSize: 26
+try to push cls c in frame i to frame j > i
+frame=1 ckeep=11 cprop=2 cdrop=0
+. Elapsed time: 0
+. % SAT:        0
+. K:            1
+. # Queries:    115
+. # CTIs:       13
+. # CTGs:       0
+. # mic calls:  26
+. Queries/sec:  11500
+. Mics/sec:     2600
+. # Red. cores: 0
+. # Int. joins: 0
+. # Int. mics:  11
+. Avg lits/cls: 2.42308
+
+
+-----------------Add Level 2-----------------
+frames.size = 4   fr.k = 3
+Strengthen frames[2]
+CTI exists, start to handle CTI with error successor
+
+Remaining 1 Obligations
+handling Obligation: cube l4 ~l9 ~l11 ~l13 ~l15  in frame 1
+The obligation is fulfilled, and the cube is lifted to l4 ~l9 ~l11 ~l13 ~l15 
+
+Start to Generalize cube l4 ~l9 ~l11 ~l13 ~l15 in frame 1
+cube is generalized to ~l9 ~l15 ~l13 ~l11 l4 
+Add cube in level 2: l4 ~l9 ~l11 ~l13 ~l15 
+push clause to level 2
+
+Remaining 1 Obligations
+handling Obligation: cube l4 ~l9 ~l11 ~l13 ~l15  in frame 2
+The obligation is not fulfilled, a new CTI found.
+
+Remaining 2 Obligations
+handling Obligation: cube ~l2 l4 ~l9 ~l13 ~l15  in frame 1
+The obligation is fulfilled, and the cube is lifted to ~l2 l4 ~l9 ~l13 ~l15 
+
+Start to Generalize cube ~l2 l4 ~l9 ~l13 ~l15 in frame 1
+cube is generalized to ~l9 ~l15 l4 ~l2 
+Add cube in level 2: ~l2 l4 ~l9 ~l15 
+push clause to level 2
+
+Remaining 2 Obligations
+handling Obligation: cube l4 ~l9 ~l11 ~l13 ~l15  in frame 2
+The obligation is not fulfilled, a new CTI found.
+
+Remaining 3 Obligations
+handling Obligation: cube l3 l4 ~l11 ~l13 ~l15  in frame 1
+The obligation is fulfilled, and the cube is lifted to l3 l4 ~l11 ~l13 ~l15 
+
+Start to Generalize cube l3 l4 ~l11 ~l13 ~l15 in frame 1
+cube is generalized to ~l13 ~l15 l4 l3 
+Add cube in level 2: l3 l4 ~l13 ~l15 
+push clause to level 2
+
+Remaining 3 Obligations
+handling Obligation: cube l4 ~l9 ~l11 ~l13 ~l15  in frame 2
+The obligation is not fulfilled, a new CTI found.
+
+Remaining 4 Obligations
+handling Obligation: cube l2 l4 ~l9 ~l11 ~l13  in frame 1
+The obligation is fulfilled, and the cube is lifted to l2 l4 ~l11 ~l13 
+
+Start to Generalize cube l2 l4 ~l11 ~l13 in frame 1
+cube is generalized to ~l11 ~l13 l4 l2 
+Add cube in level 2: l2 l4 ~l11 ~l13 
+push clause to level 2
+
+Remaining 4 Obligations
+handling Obligation: cube l4 ~l9 ~l11 ~l13 ~l15  in frame 2
+The obligation is not fulfilled, a new CTI found.
+
+Remaining 5 Obligations
+handling Obligation: cube ~l3 l4 ~l9 ~l11 ~l15  in frame 1
+The obligation is fulfilled, and the cube is lifted to ~l3 l4 ~l9 ~l11 ~l15 
+
+Start to Generalize cube ~l3 l4 ~l9 ~l11 ~l15 in frame 1
+cube is generalized to ~l9 ~l11 l4 ~l3 
+Add cube in level 2: ~l3 l4 ~l9 ~l11 
+push clause to level 2
+
+Remaining 5 Obligations
+handling Obligation: cube l4 ~l9 ~l11 ~l13 ~l15  in frame 2
+The obligation is fulfilled, and the cube is lifted to l4 ~l9 ~l11 ~l13 ~l15 
+
+Start to Generalize cube l4 ~l9 ~l11 ~l13 ~l15 in frame 2
+cube is generalized to ~l15 ~l9 ~l13 ~l11 l4 
+Add cube in level 3: l4 ~l9 ~l11 ~l13 ~l15 
+push clause to level 3
+
+Remaining 4 Obligations
+handling Obligation: cube ~l2 l4 ~l9 ~l13 ~l15  in frame 2
+The obligation is not fulfilled, a new CTI found.
+
+Remaining 5 Obligations
+handling Obligation: cube ~l2 ~l3 l4 ~l9 ~l13  in frame 1
+The obligation is fulfilled, and the cube is lifted to ~l2 ~l3 l4 ~l9 
+
+Start to Generalize cube ~l2 ~l3 l4 ~l9 in frame 1
+cube is generalized to ~l9 ~l3 l4 ~l2 
+Add cube in level 3: ~l2 ~l3 l4 ~l9 
+push clause to level 3
+
+Remaining 4 Obligations
+handling Obligation: cube ~l2 l4 ~l9 ~l13 ~l15  in frame 2
+The obligation is fulfilled, and the cube is lifted to ~l2 l4 ~l9 ~l13 ~l15 
+
+Start to Generalize cube ~l2 l4 ~l9 ~l13 ~l15 in frame 2
+cube is generalized to ~l15 ~l13 ~l9 l4 ~l2 
+Add cube in level 3: ~l2 l4 ~l9 ~l13 ~l15 
+push clause to level 3
+
+Remaining 3 Obligations
+handling Obligation: cube l3 l4 ~l11 ~l13 ~l15  in frame 2
+The obligation is not fulfilled, a new CTI found.
+
+Remaining 4 Obligations
+handling Obligation: cube ~l2 l3 l4 ~l11 ~l15  in frame 1
+The obligation is fulfilled, and the cube is lifted to ~l2 l3 l4 ~l15 
+
+Start to Generalize cube ~l2 l3 l4 ~l15 in frame 1
+cube is generalized to ~l15 l3 l4 ~l2 
+Add cube in level 3: ~l2 l3 l4 ~l15 
+push clause to level 3
+
+Remaining 3 Obligations
+handling Obligation: cube l3 l4 ~l11 ~l13 ~l15  in frame 2
+The obligation is fulfilled, and the cube is lifted to l3 l4 ~l11 ~l13 ~l15 
+
+Start to Generalize cube l3 l4 ~l11 ~l13 ~l15 in frame 2
+cube is generalized to ~l11 ~l13 ~l15 l3 l4 
+Add cube in level 3: l3 l4 ~l11 ~l13 ~l15 
+push clause to level 3
+
+Remaining 2 Obligations
+handling Obligation: cube l2 l4 ~l9 ~l11 ~l13  in frame 2
+The obligation is not fulfilled, a new CTI found.
+
+Remaining 3 Obligations
+handling Obligation: cube l2 l3 l4 ~l9 ~l13  in frame 1
+The obligation is fulfilled, and the cube is lifted to l2 l3 l4 ~l13 
+
+Start to Generalize cube l2 l3 l4 ~l13 in frame 1
+cube is generalized to ~l13 l3 l2 l4 
+Add cube in level 3: l2 l3 l4 ~l13 
+push clause to level 3
+
+Remaining 2 Obligations
+handling Obligation: cube l2 l4 ~l9 ~l11 ~l13  in frame 2
+The obligation is fulfilled, and the cube is lifted to l2 l4 ~l9 ~l11 ~l13 
+
+Start to Generalize cube l2 l4 ~l9 ~l11 ~l13 in frame 2
+cube is generalized to ~l11 ~l9 ~l13 l2 l4 
+Add cube in level 3: l2 l4 ~l9 ~l11 ~l13 
+push clause to level 3
+
+Remaining 1 Obligations
+handling Obligation: cube ~l3 l4 ~l9 ~l11 ~l15  in frame 2
+The obligation is not fulfilled, a new CTI found.
+
+Remaining 2 Obligations
+handling Obligation: cube l2 ~l3 l4 ~l11 ~l15  in frame 1
+The obligation is fulfilled, and the cube is lifted to l2 ~l3 l4 ~l11 
+
+Start to Generalize cube l2 ~l3 l4 ~l11 in frame 1
+cube is generalized to ~l11 ~l3 l2 l4 
+Add cube in level 3: l2 ~l3 l4 ~l11 
+push clause to level 3
+
+Remaining 1 Obligations
+handling Obligation: cube ~l3 l4 ~l9 ~l11 ~l15  in frame 2
+The obligation is fulfilled, and the cube is lifted to ~l3 l4 ~l9 ~l11 
+
+Start to Generalize cube ~l3 l4 ~l9 ~l11 in frame 2
+cube is generalized to ~l9 ~l11 ~l3 l4 
+Add cube in level 3: ~l3 l4 ~l9 ~l11 
+push clause to level 3
+Handle CTI successfully
+CTI exists, start to handle CTI with error successor
+
+Remaining 1 Obligations
+handling Obligation: cube l3 l5 ~l14 ~l16  in frame 1
+The obligation is fulfilled, and the cube is lifted to l3 l5 ~l14 ~l16 
+
+Start to Generalize cube l3 l5 ~l14 ~l16 in frame 1
+cube is generalized to ~l14 ~l16 l5 l3 
+Add cube in level 2: l3 l5 ~l14 ~l16 
+push clause to level 2
+
+Remaining 1 Obligations
+handling Obligation: cube l3 l5 ~l14 ~l16  in frame 2
+The obligation is not fulfilled, a new CTI found.
+
+Remaining 2 Obligations
+handling Obligation: cube l2 l3 l5 ~l14  in frame 1
+The obligation is fulfilled, and the cube is lifted to l2 l3 l5 ~l14 
+
+Start to Generalize cube l2 l3 l5 ~l14 in frame 1
+cube is generalized to ~l14 l5 l2 l3 
+Add cube in level 3: l2 l3 l5 ~l14 
+push clause to level 3
+
+Remaining 1 Obligations
+handling Obligation: cube l3 l5 ~l14 ~l16  in frame 2
+The obligation is not fulfilled, a new CTI found.
+
+Remaining 2 Obligations
+handling Obligation: cube ~l2 l3 l5 ~l16  in frame 1
+The obligation is fulfilled, and the cube is lifted to ~l2 l3 l5 ~l16 
+
+Start to Generalize cube ~l2 l3 l5 ~l16 in frame 1
+cube is generalized to ~l16 l5 ~l2 l3 
+Add cube in level 3: ~l2 l3 l5 ~l16 
+push clause to level 3
+
+Remaining 1 Obligations
+handling Obligation: cube l3 l5 ~l14 ~l16  in frame 2
+The obligation is fulfilled, and the cube is lifted to l3 l5 ~l14 ~l16 
+
+Start to Generalize cube l3 l5 ~l14 ~l16 in frame 2
+cube is generalized to ~l14 ~l16 l5 l3 
+Add cube in level 3: l3 l5 ~l14 ~l16 
+push clause to level 3
+Handle CTI successfully
+CTI exists, start to handle CTI with error successor
+
+Remaining 1 Obligations
+handling Obligation: cube ~l2 l5 ~l10 ~l16  in frame 1
+The obligation is fulfilled, and the cube is lifted to ~l2 l5 ~l10 ~l16 
+
+Start to Generalize cube ~l2 l5 ~l10 ~l16 in frame 1
+cube is generalized to ~l10 ~l16 l5 ~l2 
+Add cube in level 2: ~l2 l5 ~l10 ~l16 
+push clause to level 2
+
+Remaining 1 Obligations
+handling Obligation: cube ~l2 l5 ~l10 ~l16  in frame 2
+The obligation is not fulfilled, a new CTI found.
+
+Remaining 2 Obligations
+handling Obligation: cube ~l2 ~l3 l5 ~l10  in frame 1
+The obligation is fulfilled, and the cube is lifted to ~l2 ~l3 l5 ~l10 
+
+Start to Generalize cube ~l2 ~l3 l5 ~l10 in frame 1
+cube is generalized to ~l10 l5 ~l2 ~l3 
+Add cube in level 3: ~l2 ~l3 l5 ~l10 
+push clause to level 3
+
+Remaining 1 Obligations
+handling Obligation: cube ~l2 l5 ~l10 ~l16  in frame 2
+The obligation is fulfilled, and the cube is lifted to ~l2 l5 ~l10 ~l16 
+
+Start to Generalize cube ~l2 l5 ~l10 ~l16 in frame 2
+cube is generalized to ~l10 ~l16 l5 ~l2 
+Add cube in level 3: ~l2 l5 ~l10 ~l16 
+push clause to level 3
+Handle CTI successfully
+No CTI found.
+CubeSet of frame 0: 
+CubeSet of frame 1: 
+l4 
+l5 
+l6 
+l9 
+l10 
+l11 
+l12 
+l13 
+l14 
+l15 
+l16 
+CubeSet of frame 2: 
+l0 
+l1 
+l4 l6 
+l5 l6 
+l2 l3 ~l4 l13 
+l2 l3 ~l5 l14 
+l2 ~l3 ~l4 l11 
+l2 ~l3 l5 ~l12 
+l2 ~l3 ~l5 l12 
+l2 l4 ~l11 ~l13 
+~l2 l3 ~l4 l15 
+~l2 l3 ~l5 l16 
+~l2 ~l3 ~l4 l9 
+~l2 ~l3 ~l5 l10 
+~l2 l4 ~l9 ~l15 
+~l2 l5 ~l10 ~l16 
+l3 l4 ~l13 ~l15 
+l3 l5 ~l14 ~l16 
+~l3 l4 ~l9 ~l11 
+l0 ~l9 ~l11 ~l13 ~l15 
+l1 ~l2 l3 l6 ~l16 
+l4 ~l9 ~l11 ~l13 ~l15 
+CubeSet of frame 3: 
+l2 l3 l4 ~l13 
+l2 l3 l5 ~l14 
+l2 ~l3 l4 ~l11 
+~l2 l3 l4 ~l15 
+~l2 l3 l5 ~l16 
+~l2 ~l3 l4 ~l9 
+~l2 ~l3 l5 ~l10 
+~l2 l5 ~l10 ~l16 
+l3 l5 ~l14 ~l16 
+~l3 l4 ~l9 ~l11 
+l2 l4 ~l9 ~l11 ~l13 
+~l2 l4 ~l9 ~l13 ~l15 
+l3 l4 ~l11 ~l13 ~l15 
+l4 ~l9 ~l11 ~l13 ~l15 
+propagate
+remove cube s in frame i if s appears in frame j > i
+frame: 3 CubeSize: 14 RemoveSize: 14 AllRemoveSize: 14
+frame: 2 CubeSize: 22 RemoveSize: 18 AllRemoveSize: 32
+try to push cls c in frame i to frame j > i
+frame=1 ckeep=11 cprop=0 cdrop=0
+frame=2 ckeep=4 cprop=14 cdrop=0
+. Elapsed time: 0
+. % SAT:        0
+. K:            2
+. # Queries:    271
+. # CTIs:       27
+. # CTGs:       0
+. # mic calls:  47
+. Queries/sec:  27100
+. Mics/sec:     4700
+. # Red. cores: 0
+. # Int. joins: 0
+. # Int. mics:  30
+. Avg lits/cls: 3.23404
+
+
+-----------------Add Level 3-----------------
+frames.size = 5   fr.k = 4
+Strengthen frames[3]
+CTI exists, start to handle CTI with error successor
+
+Remaining 1 Obligations
+handling Obligation: cube ~l1 l5 l6  in frame 2
+The obligation is fulfilled, and the cube is lifted to ~l1 l5 l6 
+
+Start to Generalize cube ~l1 l5 l6 in frame 2
+cube is generalized to ~l1 l6 l5 
+Add cube in level 4: ~l1 l5 l6 
+push clause to level 4
+Handle CTI successfully
+CTI exists, start to handle CTI with error successor
+
+Remaining 1 Obligations
+handling Obligation: cube l1 ~l5 l6  in frame 2
+The obligation is fulfilled, and the cube is lifted to l1 ~l5 l6 
+
+Start to Generalize cube l1 ~l5 l6 in frame 2
+cube is generalized to l1 l6 ~l5 
+Add cube in level 4: l1 ~l5 l6 
+push clause to level 4
+Handle CTI successfully
+CTI exists, start to handle CTI with error successor
+
+Remaining 1 Obligations
+handling Obligation: cube l0 ~l4 l6  in frame 2
+The obligation is fulfilled, and the cube is lifted to l0 ~l4 l6 
+
+Start to Generalize cube l0 ~l4 l6 in frame 2
+cube is generalized to l0 l6 ~l4 
+Add cube in level 4: l0 ~l4 l6 
+push clause to level 4
+Handle CTI successfully
+CTI exists, start to handle CTI with error successor
+
+Remaining 1 Obligations
+handling Obligation: cube ~l0 l4 l6  in frame 2
+The obligation is fulfilled, and the cube is lifted to ~l0 l4 l6 
+
+Start to Generalize cube ~l0 l4 l6 in frame 2
+cube is generalized to ~l0 l6 l4 
+Add cube in level 4: ~l0 l4 l6 
+push clause to level 4
+Handle CTI successfully
+No CTI found.
+CubeSet of frame 0: 
+CubeSet of frame 1: 
+l4 
+l5 
+l6 
+l9 
+l10 
+l11 
+l12 
+l13 
+l14 
+l15 
+l16 
+CubeSet of frame 2: 
+l0 
+l1 
+l4 l6 
+l5 l6 
+CubeSet of frame 3: 
+l2 l3 l4 ~l13 
+l2 l3 ~l4 l13 
+l2 l3 l5 ~l14 
+l2 l3 ~l5 l14 
+l2 ~l3 l4 ~l11 
+l2 ~l3 ~l4 l11 
+l2 ~l3 l5 ~l12 
+l2 ~l3 ~l5 l12 
+l2 l4 ~l11 ~l13 
+~l2 l3 l4 ~l15 
+~l2 l3 ~l4 l15 
+~l2 l3 l5 ~l16 
+~l2 l3 ~l5 l16 
+~l2 ~l3 l4 ~l9 
+~l2 ~l3 ~l4 l9 
+~l2 ~l3 l5 ~l10 
+~l2 ~l3 ~l5 l10 
+~l2 l4 ~l9 ~l15 
+~l2 l5 ~l10 ~l16 
+l3 l4 ~l13 ~l15 
+l3 l5 ~l14 ~l16 
+~l3 l4 ~l9 ~l11 
+l0 ~l9 ~l11 ~l13 ~l15 
+l1 ~l2 l3 l6 ~l16 
+l2 l4 ~l9 ~l11 ~l13 
+~l2 l4 ~l9 ~l13 ~l15 
+l3 l4 ~l11 ~l13 ~l15 
+l4 ~l9 ~l11 ~l13 ~l15 
+CubeSet of frame 4: 
+l0 ~l4 l6 
+~l0 l4 l6 
+l1 ~l5 l6 
+~l1 l5 l6 
+propagate
+remove cube s in frame i if s appears in frame j > i
+frame: 4 CubeSize: 4 RemoveSize: 4 AllRemoveSize: 4
+try to push cls c in frame i to frame j > i
+frame=1 ckeep=11 cprop=0 cdrop=0
+frame=2 ckeep=4 cprop=0 cdrop=0
+frame=3 ckeep=1 cprop=27 cdrop=0
+. Elapsed time: 0
+. % SAT:        0
+. K:            3
+. # Queries:    343
+. # CTIs:       31
+. # CTGs:       0
+. # mic calls:  51
+. Queries/sec:  34300
+. Mics/sec:     5100
+. # Red. cores: 0
+. # Int. joins: 0
+. # Int. mics:  34
+. Avg lits/cls: 3.21569
+
+
+-----------------Add Level 4-----------------
+frames.size = 6   fr.k = 5
+Strengthen frames[4]
+No CTI found.
+CubeSet of frame 0: 
+CubeSet of frame 1: 
+l4 
+l5 
+l6 
+l9 
+l10 
+l11 
+l12 
+l13 
+l14 
+l15 
+l16 
+CubeSet of frame 2: 
+l0 
+l1 
+l4 l6 
+l5 l6 
+CubeSet of frame 3: 
+l0 ~l9 ~l11 ~l13 ~l15 
+CubeSet of frame 4: 
+l0 ~l4 l6 
+~l0 l4 l6 
+l1 ~l5 l6 
+~l1 l5 l6 
+l2 l3 l4 ~l13 
+l2 l3 ~l4 l13 
+l2 l3 l5 ~l14 
+l2 l3 ~l5 l14 
+l2 ~l3 l4 ~l11 
+l2 ~l3 ~l4 l11 
+l2 ~l3 l5 ~l12 
+l2 ~l3 ~l5 l12 
+l2 l4 ~l11 ~l13 
+~l2 l3 l4 ~l15 
+~l2 l3 ~l4 l15 
+~l2 l3 l5 ~l16 
+~l2 l3 ~l5 l16 
+~l2 ~l3 l4 ~l9 
+~l2 ~l3 ~l4 l9 
+~l2 ~l3 l5 ~l10 
+~l2 ~l3 ~l5 l10 
+~l2 l4 ~l9 ~l15 
+~l2 l5 ~l10 ~l16 
+l3 l4 ~l13 ~l15 
+l3 l5 ~l14 ~l16 
+~l3 l4 ~l9 ~l11 
+l1 ~l2 l3 l6 ~l16 
+l4 ~l9 ~l11 ~l13 ~l15 
+CubeSet of frame 5: 
+propagate
+remove cube s in frame i if s appears in frame j > i
+frame: 5 CubeSize: 0 RemoveSize: 0 AllRemoveSize: 0
+try to push cls c in frame i to frame j > i
+frame=4 ckeep=0 cprop=28 cdrop=0
+. Elapsed time: 0
+. % SAT:        0
+. K:            4
+. # Queries:    372
+. # CTIs:       31
+. # CTGs:       0
+. # mic calls:  51
+. Queries/sec:  37200
+. Mics/sec:     5100
+. # Red. cores: 0
+. # Int. joins: 0
+. # Int. mics:  34
+. Avg lits/cls: 3.21569
+0
