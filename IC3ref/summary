@@ -1,0 +1,112 @@
+1. How to use 
+将二进制格式的aig文件转化为可理解的ASCII格式aag文件
+./aigtoaig tests/bug_instance/prodcellp0neg.aig tests/bug_instance/prodcellp0neg.aag
+./aigtoaig tests/test_2d.aig
+
+对aig格式的AIGER文件使用PDR进行验证 
+./simpleIC3 test_counter_4.aag
+./IC3 -v < 3bit_counter.aag      输入0或1的3位counter
+./IC3 -v < ../testcase/bug_instance/LatchFlip.aag         输入enable的自取反触发器
+./IC3 -v -b < ../testcase/bug_instance/test_counter_4.aag    输入4位input的4位counter 不变式!i1 !i2 !i3保证每次输入0001 or 0000  
+./IC3 -v < ../testcase/bug_instance/prodcellp0neg.aig
+./IC3 -v < ../testcase/bug_instance/prodcellp0neg.aag
+./IC3 -v < ../testcase/bug_instance/3bit_counter.aag
+
+ 
+2. Aiger example
+(1) examples/cnt1.aag
+aag 1 0 1 0 0 1
+2 3         x1 <- !x1
+2           x1
+解释：一个震荡电路，无输入输出，唯一变量x1，转移函数x1'=!x1，属性x1=1,显然不恒成立
+
+(2) tests/test_2d.aig
+aag 5 1 4 1 0 
+2     i0 = x1
+4 1   x2 = 1
+6 3   x3 <- !x1
+8 6   x4 <- x3
+10 8  x5 <- x4
+10    输出x5 此处将 x5=1 看作bad state
+解释：转移过程如下：输入1时 1 x x x x -> 1 1 0 x x -> 1 1 0 0 x -> 1 1 0 0 0 
+                   输入0时 0 x x x x -> 0 1 1 x x -> 0 1 1 1 x -> 0 1 1 1 1 bad state
+
+(3) tests/myaiger.aig
+aag 5 1 3 1 1
+2     i0 = x1
+4 1   l0' = 1
+6 3   l1' = !i0
+8 6   l2' = l1
+10      输出x5 此处将 x5=1 看作bad state
+10 6 8  r0 = l1 * l2
+解释：转移过程如下：输入i0 = 1时 1 x x x x -> 1 1 0 x x -> 1 1 0 0 x -> 1 1 0 0 0 
+                   输入i0 = 0时 0 x x x x -> 0 1 1 x x -> 0 1 1 1 x -> 0 1 1 1 1 bad state
+
+
+3. Code implementation -- Aiger to Model (Model * modelFromAiger/ Model.cpp)
+(1) 在minisat的SolverTypes.h中，变量Var即为int类型，文字(literal)+x用2x表示，-x用2x+1表示 
+赋值函数 
+inline  Lit  mkLit (Var var, bool sign) { Lit p; p.x = var + var + (int)sign; return p; } var表示变量下标/序号x
+
+判断lit正负 
+inline  bool sign (Lit p) { return p.x & 1; } +x最后一位为0 -x最后一位为1
+
+获得lit的var
+inline  int  var (Lit p)  { return p.x >> 1; } lit 2x和2x+1的var都为x
+
+
+(2)
+在IC3ref的Model.h中, 对Var类型作了封装(封装的Var类型包括变量的下标与名称)，定义了AigRow类型表示aiger格式的一行与门数据(Aigrow包含Minisat::Lit lhs, rhs0, rhs1)
+接着 定义三个vector数组类型，分别存储AigRow, Minisat::Lit, Var类型，表示为AigVec，LitVec，VarVec
+
+VarVec类型变量vars存储输入变量i0 i1 ...与锁存器变量l0, l1, l2...     typedef vector<Var> VarVec;
+AigVec类型变量aigv存储输入的所有与门                                 typedef vector<AigRow> AigVec;
+LitVec类型变量init, nextStateFns存储锁存器初始状态和下一状态          typedef vector<Minisat::Lit> LitVec;
+
+
+4. Code implementation -- check 0-step and 1-step reachability (bool baseCases/ IC3.cpp)
+(1) 新建求解器指针base0
+首先调用Minisat::Solver * base0 = model.newSolver();来建立一个求解器指针
+该求解器中的每个变元与vars中的变元一一对应(vars[0]到 vars[i]) 
+(2)检查0-step reachability  需要转为子句的输入：init, and, !error
+model.loadInitialCondition(*base0);  将init中的所有lit以单位字句的形式加入到求解器中，这些字句是初始条件，需要被满足
+model.loadError(*base0); 将AigVec中的所有与门以字句的形式加入到求解器中
+以与门lhs = rhs0 * rhs1为例，rhs0=0->lhs=0，rhs1=0->lhs=0，(rhs0=1 * rhs1=1)->lhs = 1
+以上三个条件转换为三条字句: slv.addClause(~i->lhs, i->rhs0); addClause(~i->lhs, i->rhs1); addClause(~i->rhs0, ~i->rhs1, i->lhs);
+(3)检查1-step reachability 需要转为子句的输入: init, and, transition, primed_and, !primed_error
+model.loadInitialCondition(*base0);  同上
+Model::loadTransitionRelation 在求解器中加入转移后变元(f')，为f'构建与门字句，为f'构建锁存器字句(将一步转移公式转为字句) 
+以锁存器l'=f为例, f->l'且!f->!l', 转为两条字句 (!f|l')  (f|!l')
+
+
+5. Code implementation -- IC3 check (bool check/ IC3.cpp)
+IC3.cpp用frame结构体来表示IC3算法中的frame，用vector<Frame> frames来存储帧序列. 一个frame类型包括帧序号k，帧包含的状态CubeSet borderCubes，以及一个求解器指针consecution. The main loop is bool check().
+(1)首先用void extend()函数来push frame，对frame的consecution调用loadTransitionRelation. 特别的，对帧F0的求解器再调用loadInitialCondition.
+(2)接着，调用bool strengthen()来strengthen frontier to remove error successors. 检查帧序列的最后一项Fk是否存在CTI. 若存在,需要handle CTI, 那么添加一项证明义务Obligation(stateOf(frontier), k-1, 1). 通过handleObligations(pq)来处理CTI. 此处stateOf函数的作用是lift CTI.
+      The scheme is as follows.  For obligation <s, i>:
+  
+      1. Check consecution of ~s relative to i-1.(想要从Fi中删除s，就要证明s相对Fi-1归纳)
+         调用consecution(obl.level, state(obl.state).latches, obl.state, &core, &predi)
+  
+      2. If it succeeds, generalize, then push foward to, say, j.  If j <= k (the frontier), enqueue obligation <s, j>.
+         此时!cube已被证明为归纳相关于obl.level 需要通过mic函数获得!cube的最小归纳子句 并将这个归纳子句尽可能右推到Fj
+         size_t n = generalize(obl.level, core);
+         obls.insert(Obligation(obl.state, n, obl.depth));
+  
+      3. If it fails, extract the predecessor t (using stateOf()) and enqueue obligation <t, i-1>.
+         此处stateOf函数的作用是lift t (导致！s相对归纳失败的state t)
+         obls.insert(Obligation(predi, obl.level-1, obl.depth+1));
+
+(3)最后，基于induction调用propagate()来传播子句
+      1. clean up: remove c in frame i if c appears in frame j when i < j
+
+      2. check if each c in frame i can be pushed to frame j
+         检查Fi的子句c, 如果c相对Fi归纳独立, 那么将c加入到F_i+1
+      
+      3. simplify frames
+
+
+
+
+
+
